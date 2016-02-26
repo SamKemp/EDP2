@@ -1,6 +1,6 @@
 # EDP2
 The repo for my EDP2 assignment.
-
+This repo is for a college assignment for Event Driven Programming called EDP2
 
 Features:
 - A display for the players score
