@@ -4,18 +4,18 @@ using System.Windows.Forms;
 
 namespace EDP2
 {
-    public partial class frmGame : Form
+    public partial class FrmGame : Form
     {
-        private int _score = 0;
-        private int _i = 0;
-        private int _question = 0;
+        private int _score;
+        private int _i;
+        private int _question;
         private int _totalQuestions = 6;
-        private int _answer = 0;
-        private int _prevanswer = 0;
+        private int _answer;
+        private int _prevanswer;
         private int _time;
         private int _TestMode = 0;
 
-        public frmGame()
+        public FrmGame()
         {
             InitializeComponent();
 
@@ -179,7 +179,7 @@ namespace EDP2
                     }
                 }
 
-                stopTimers();
+                StopTimers();
 
                 EndGame("You got a score of: " + _score, "Final score");
             }
@@ -216,7 +216,7 @@ namespace EDP2
                 }
             }
 
-            stopTimers();
+            StopTimers();
 
             EndGame("You got a score of: " + _score, "Final score");
         }
@@ -234,7 +234,7 @@ namespace EDP2
 
                 //Add 1 to _i
                 _i++;
-            };
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace EDP2
                 }
             }
 
-            stopTimers();
+            StopTimers();
 
             EndGame("You got a score of: " + _score , "Final score");
         }
@@ -269,32 +269,32 @@ namespace EDP2
                     ChooseColor();
                     break;
                 case 1:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Red;
                     _answer = 1;
                     break;
                 case 2:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Green;
                     _answer = 2;
                     break;
                 case 3:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Blue;
                     _answer = 3;
                     break;
                 case 4:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Yellow;
                     _answer = 4;
                     break;
                 case 5:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Orange;
                     _answer = 5;
                     break;
                 case 6:
-                    questionChecker(number);
+                    QuestionChecker(number);
                     pictureBox.BackColor = Color.Purple;
                     _answer = 6;
                     break;
@@ -304,7 +304,7 @@ namespace EDP2
             }
         }
 
-        public void questionChecker(int number)
+        public void QuestionChecker(int number)
         {
             if (_prevanswer == number)
             {
@@ -314,9 +314,15 @@ namespace EDP2
 
         public void EndGame(string reason, string title)
         {
-            scoreUpdate();
+            ScoreUpdate();
+
             MessageBox.Show(reason, title, MessageBoxButtons.OK);
             Close();
+        }
+
+        private void UploadToLeaderboard()
+        {
+            
         }
 
         private void labQuestion_Click(object sender, EventArgs e)
@@ -326,16 +332,16 @@ namespace EDP2
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            scoreUpdate();
+            ScoreUpdate();
         }
 
-        private void scoreUpdate()
+        private void ScoreUpdate()
         {
             //Update the _score label
             labScoreNum.Text = _score.ToString();
         }
 
-        private void stopTimers()
+        private void StopTimers()
         {
             timer1.Stop();
             timer2.Stop();

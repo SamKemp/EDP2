@@ -1,6 +1,6 @@
 ﻿namespace EDP2
 {
-    partial class frmGame
+    partial class FrmGame
     {
         /// <summary>
         /// Required designer variable.
@@ -166,9 +166,9 @@
             this.labQuestionTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labQuestionTotal.Location = new System.Drawing.Point(634, 624);
             this.labQuestionTotal.Name = "labQuestionTotal";
-            this.labQuestionTotal.Size = new System.Drawing.Size(78, 55);
+            this.labQuestionTotal.Size = new System.Drawing.Size(51, 55);
             this.labQuestionTotal.TabIndex = 11;
-            this.labQuestionTotal.Text = "10";
+            this.labQuestionTotal.Text = "0";
             // 
             // labQuestion2
             // 
@@ -296,7 +296,7 @@
             this.buttPurpleTest.Text = "Test";
             this.buttPurpleTest.UseVisualStyleBackColor = true;
             // 
-            // frmGame
+            // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -324,7 +324,7 @@
             this.Controls.Add(this.buttBlue);
             this.Controls.Add(this.buttGreen);
             this.Controls.Add(this.buttRed);
-            this.Name = "frmGame";
+            this.Name = "FrmGame";
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
